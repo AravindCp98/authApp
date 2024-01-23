@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { getAuth, } from "firebase/auth";
 import {
   signOut,
@@ -13,17 +14,19 @@ import { SecurityServiceService } from '../../../authGuard/security-service.serv
   selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
+  imports: [NgClass]
 })
 export class LoginComponent implements OnInit {
   auth: any;
   public currentUser: any
   authVal: any;
+  public showMenu: boolean = true;
 
   constructor(
     private Common: SignalState,
-     private router: Router,
-     private securityService: SecurityServiceService
-    ) { }
+    private router: Router,
+    private securityService: SecurityServiceService
+  ) { }
   ngOnInit(): void {
     this.Common.currentUserDetails.subscribe((value) => {
       console.log(value);
@@ -38,6 +41,6 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['']);
     this.securityService.checkForAuth(false);
 
-  
+
   }
 }
