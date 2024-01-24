@@ -1,12 +1,4 @@
-main {
-    background-color: var(--bg);
-    width: 100%;
-    height: 1000%;
-    background-image: url('../assets/images/5040007[1].webp');
-}
-
-
-
+        
 .form-content {
     display: flex;
     align-items: center;
@@ -14,9 +6,10 @@ main {
     /* top: 50%; */
     position: absolute;
     /* left: 42%; */
-    background-image: url('../assets/images/5040007[1].webp');  
+    background-image: url('../assets/images/5040007.jpg');  
     width: 100%;
     height: 100%;
+    background-size: cover;
 }
 .google-sign-in-button {
     cursor: pointer;
